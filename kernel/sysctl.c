@@ -693,7 +693,21 @@ static struct ctl_table kern_table[] = {
 		.extra1		= &one,
 	},
 #endif
-#ifdef CONFIG_SCHED_QHMP
+#ifdef CONFIG_SCHEDSTATS
+	{
+		.procname	= "sched_latency_panic_threshold_us",
+		.data		= &sysctl_sched_latency_panic_threshold,
+		.maxlen		= sizeof(unsigned int),
+		.mode		= 0644,
+		.proc_handler	= proc_dointvec_minmax,
+	},
+	{
+		.procname	= "sched_latency_warn_threshold_us",
+		.data		= &sysctl_sched_latency_warn_threshold,
+		.maxlen		= sizeof(unsigned int),
+		.mode		= 0644,
+		.proc_handler	= proc_dointvec_minmax,
+	},
 	{
 		.procname	= "sched_max_latency_us",
 		.mode		= 0644,
