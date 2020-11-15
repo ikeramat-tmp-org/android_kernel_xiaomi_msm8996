@@ -158,14 +158,10 @@ extern unsigned int sysctl_sched_cfs_bandwidth_slice;
 extern unsigned int sysctl_sched_autogroup_enabled;
 #endif
 
-#ifdef CONFIG_SCHEDSTATS
 #ifdef CONFIG_SCHED_QHMP
-extern unsigned int sysctl_sched_latency_panic_threshold;
-extern unsigned int sysctl_sched_latency_warn_threshold;
 extern int sched_max_latency_sysctl(struct ctl_table *table, int write,
 				    void __user *buffer, size_t *lenp,
 				    loff_t *ppos);
-#endif
 #endif
 
 extern int sched_rr_timeslice;
